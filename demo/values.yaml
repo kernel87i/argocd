@@ -1,0 +1,28 @@
+---
+namespace: ddd
+
+replicaCount: 4
+rollingUpdate:
+  maxSurge: 1
+  maxUnavailable: 1
+
+image:
+  repository: quay.io/jitesoft/nginx
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  type: NodePort
+  typePort: nodePort
+  port: 30114
+
+containers:
+  containerPort: 8080
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 256Mi
+  requests:
+    cpu: 50m
+    memory: 128Mi
