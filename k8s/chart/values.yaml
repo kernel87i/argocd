@@ -1,5 +1,5 @@
 ---
-namespace: ddd
+namespace: test
 
 replicaCount: 4
 rollingUpdate:
